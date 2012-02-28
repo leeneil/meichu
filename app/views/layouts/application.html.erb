@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Concurrence  
+Description: A two-column, fixed-width design for 1024x768 screen resolutions.
+Version    : 1.0
+Released   : 20100727
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>
+	<%= @page_title %> -2012壬辰梅竹非官方轉播平台！
+</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<%= stylesheet_link_tag 'style', :cache => false %>
+</head>
+<body>
+<div id="header">
+	<div id="menu">
+		<ul>
+			<li><a href="#" class="first">Homepage</a></li>
+			<li class="current_page_item"><a href="#">Personal Blog</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+</div>
+<!-- end #header -->
+<div id="logo">
+	<h1><a href="#">2012非官方壬辰梅竹賽況 </a></h1>
+	<p><em> 沒竹通訊社</em></p>
+</div>
+<hr />
+<!-- end #logo -->
+<div id="page">
+	<div id="page-bgtop">
+		<div id="page-bgbtm">
+			<div id="content">
+				<%= yield %>
+			</div>
+			<!-- end #content -->
+			<div id="sidebar">
+				<ul>
+					<%= render :partial=>"menu"%>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+		</div>
+	</div>
+</div>
+<div id="footer">
+	<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+</div>
+<!-- end #footer -->
+</body>
+</html>

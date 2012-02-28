@@ -1,0 +1,23 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				所有賽況
+			</a></h2>
+
+			<div class="entry">
+				
+				<ul>
+					<% for report in @reports %>
+						<li>
+							<strong><%= report.game.title %></strong>
+							第<%= report.set %> <%= report.game.set %>
+							[<%=link_to '編輯', :action=>"edit", :id=>report %>]
+							
+						</li>
+					<% end %>
+				</ul>
+
+			</div>
+			<p>
+				<%= link_to '新賽況', :action=>:new %>
+			</p>	
+</div></div></div>

@@ -1,0 +1,50 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				新增賽況
+			</a></h2>
+
+			<div class="entry">
+				
+				<%=form_for :report do |f| %>
+				<ul>
+					<li>
+						<strong>
+							賽事名稱
+						</strong>
+						<%= f.collection_select(:game_id, Game.live, :id, :title) %>
+					</li>
+					<li>
+						<strong>
+							局、盤、點
+						</strong>
+						<%= f.text_field :set %>
+					</li>
+					<li>
+						<strong>
+							清大得分
+						</strong>
+						<%= f.text_field :nthu %>
+					</li>
+					<li>
+						<strong>
+							交大得分
+						</strong>
+						<%= f.text_field :nctu %>
+					</li>
+					<li>
+						<strong>
+							備註
+						</strong>
+						<%= f.text_area :remark %>
+					</li>
+
+
+				</ul>
+				<%= f.submit '新增賽況'%>
+				<% end %>
+
+			</div>
+			<p>
+				<%= link_to '所有賽況', :action=>:index %>
+			</p>	
+</div></div></div>

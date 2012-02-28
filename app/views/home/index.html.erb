@@ -1,0 +1,28 @@
+<%= render :partial => "champion" %>
+<% for status in @statuses %>
+	<% for game in status.games %>
+		<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+					<h2 class="title"><a href="#">
+						<%= game.title%>
+					</a></h2>
+					<p>
+						<strong><%=game.status.name %></strong>
+						<%=game.date%> <%=game.time%> 於 <%=game.home.school%> <%=game.venue%> </p>
+					<div class="entry">
+						<% @report = Report.lastest(game.id) %>
+						<p class="score">
+						<% if @report %>
+							<span class="nthu"><%=@report.nthu %></span>
+							 : <span class="nctu"><%=@report.nctu %></span>
+						<% end %>
+						</p>
+						<% unless game.winner == 0 %>
+							<%= Home.find(game.winner).school %> 勝利！
+						<% end %>
+
+
+					</div>	
+		</div></div></div>
+	
+	<% end %>
+<% end %>

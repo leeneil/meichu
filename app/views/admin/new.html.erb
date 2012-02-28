@@ -1,0 +1,76 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				新增
+			</a></h2>
+
+			<div class="entry">
+				
+				<%=form_for :game do |f| %>
+				<ul>
+					<li>
+						<strong>
+							賽事名稱
+						</strong>
+						<%= f.text_field :title %>
+					</li>
+					<li>
+						<strong>
+							日期
+						</strong>
+						<%= f.text_field :date %>
+					</li>
+					<li>
+						<strong>
+							時間
+						</strong>
+						<%= f.text_field :time %>
+					</li>
+					<li>
+						<strong>
+							主場
+						</strong>
+						<%= f.collection_select(:home_id,\
+						 Home.all, :id, :school) %>
+					</li>
+					<li>
+						<strong>
+							場館
+						</strong>
+						<%= f.text_field :venue %>
+					</li>
+					<li>
+						<strong>
+							賽事類型
+						</strong>
+						<%= collection_select(:f, :game_type_id,\
+						 GameType.all, :id, :name) %>
+					</li>
+					<li>
+						<strong>
+							賽事狀態
+						</strong>
+						<%= f.collection_select(:status_id, Status.all, :id, :name) %>
+					</li>
+					<li>
+						<strong>
+							勝隊
+						</strong>
+						<%= collection_select(:game, :winner,\
+						 Home.all, :id, :school, :prompt => "請選擇") %>
+					</li>
+					<li>
+						<strong>
+							比賽單位
+						</strong>
+						<%= f.text_field :set %>
+					</li>
+
+				</ul>
+				<%= f.submit '新增賽事'%>
+				<% end %>
+
+			</div>
+			<p>
+				<%= link_to '所有賽事', :action=>:index %>
+			</p>	
+</div></div></div>
