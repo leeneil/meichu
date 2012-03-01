@@ -19,10 +19,10 @@
 					<% if @reports %>
 						<% for report in @reports %>
 						<p><strong>第<%=report.set%><%=game.set%></strong> <br />
-									<% if  game.home_id = 113 %>
+									<% if  game.home_id == 113 %>
 										交大 <%=h report.nctu%>：清大 <%=h report.nthu%> <br />
 									<% else %>
-										清大 <%=h report.nthu%>：交大 <%=h report.ncuu%> <br />
+										清大 <%=h report.nthu%>：交大 <%=h report.nctu%> <br />
 									<% end %>
 									<%=h report.remark %></p>
 						<% end %>	
