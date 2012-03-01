@@ -3,9 +3,11 @@
 	<h2>2012壬辰梅竹所有賽事 </h2>
 	<ul>
 		<% for status in @statuses %>
+			<% unless status.games.empty? %>
 			<li>
 				<%=link_to status.name, :anchor=>status.id %>
 			</li>
+			<% end %>
 		<% end %>
 	</ul>
 </li>
