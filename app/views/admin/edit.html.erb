@@ -42,7 +42,7 @@
 						<strong>
 							賽事類型
 						</strong>
-						<%= collection_select(:f, :game_type_id,\
+						<%= f.collection_select(:game_type_id,\
 						 GameType.all, :id, :name) %>
 					</li>
 					<li>
