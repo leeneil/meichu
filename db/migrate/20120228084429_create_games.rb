@@ -12,6 +12,7 @@ class CreateGames < ActiveRecord::Migration
       t.string  :time
       t.string   :set, :default=>"局"
       t.integer :position, :default=>0
+      t.string  :live
       
 
       t.timestamps

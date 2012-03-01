@@ -2,7 +2,7 @@ class CreateReports < ActiveRecord::Migration
   def change
     create_table :reports do |t|
       t.integer :game_id
-      t.integer :set
+      t.string :set
       t.integer :nthu
       t.integer :nctu
       t.string  :remark

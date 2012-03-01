@@ -11,7 +11,7 @@
 						<strong>
 							賽事名稱
 						</strong>
-						<%= f.collection_select(:game_id, Game.live, :id, :title) %>
+						<%= f.collection_select(:game_id, Game.all, :id, :title) %>
 					</li>
 					<li>
 						<strong>

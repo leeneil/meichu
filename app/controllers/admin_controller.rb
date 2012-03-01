@@ -1,6 +1,7 @@
 class AdminController < ApplicationController
+  before_filter :authenticate 
   def index
-    @games = Game.all
+    @games = Game.all(:order=>"date, position")
   end
   def new
     @game = Game.new(params[:game])
@@ -13,5 +14,12 @@ class AdminController < ApplicationController
     if request.post? and @game.update_attributes(params[:game])
       redirect_to(:action=>:index)
     end
+  end
+  
+end
+private
+def authenticate
+  authenticate_or_request_with_http_basic do |name, password|
+    name == "nochu" && password == "nthuthewinner"
   end
 end

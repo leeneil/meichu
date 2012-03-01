@@ -93,7 +93,7 @@ hr {
 
 #header {
 	width: 950px;
-	height: 70px;
+	height: 40px;
 	margin: 0px auto;
 }
 
@@ -133,11 +133,11 @@ hr {
 }
 
 #menu li.current_page_item {
-	background: url(images/img01.jpg) no-repeat left top;
+	background: #A7C520;
 }
 
 #menu li.current_page_item a {
-	background: url(images/img02.jpg) no-repeat right top;
+	background: #A7C520;
 }
 
 #menu .first {
@@ -262,7 +262,10 @@ hr {
 }
 
 .post-bgtop {
-	background: url(images/img04.jpg) no-repeat left top;
+	background: url(images/img04a.png) no-repeat left top;
+}
+.post-bgtop-champ{
+	background: url(images/img04.png) no-repeat left top;
 }
 
 .post-bgbtm {
@@ -377,7 +380,7 @@ hr {
 	height: 50px;
 	margin: 0px;
 	padding: 30px 0px 13px 30px;
-	background: url(images/img08.jpg) no-repeat left top;
+	background: url(images/img08.png) no-repeat left top;
 	letter-spacing: -1px;
 	text-transform: lowercase;
 	font-size: 24px;

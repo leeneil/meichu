@@ -7,17 +7,25 @@
 					</a></h2>
 					<p>
 						<strong><%=game.status.name %></strong>
-						<%=game.date%> <%=game.time%> 於 <%=game.home.school%> <%=game.venue%> </p>
+						<%=game.date%> <%=game.time%> 於 <%=game.home.school%> <%=game.venue%>
+						<% unless game.live_url.blank? %>
+							[<%=link_to '轉播', game.live_url, :target=>"_blank" %>]
+						<% end %> </p>
 					<div class="entry">
 						<% @report = Report.lastest(game.id) %>
-						<p class="score">
 						<% if @report %>
-							<span class="nthu"><%=@report.nthu %></span>
-							 : <span class="nctu"><%=@report.nctu %></span>
+							<p><strong>第<%=@report.set%><%=game.set%></strong> <br />
+									<% if  game.home_id = 113 %>
+										交大 <%=h @report.nctu%>：清大 <%=h @report.nthu%> <br />
+									<% else %>
+										清大 <%=h @report.nthu%>：交大 <%=h @report.ncuu%> <br />
+									<% end %>
+									<%=h @report.remark %></p>
+									
 						<% end %>
-						</p>
-						<% unless game.winner == 0 %>
-							<%= Home.find(game.winner).school %> 勝利！
+						<% if game.winner != 0 and game.status_id == 4%>
+							<p></p>
+							<h3><%= Home.find(game.winner).school %> 勝利！</h3>
 						<% end %>
 
 

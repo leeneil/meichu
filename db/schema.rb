@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228100043) do
+ActiveRecord::Schema.define(:version => 20120301200245) do
 
   create_table "game_types", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120228100043) do
     t.integer  "position",     :default => 0
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.string   "live_url"
   end
 
   create_table "homes", :force => true do |t|
@@ -43,9 +44,18 @@ ActiveRecord::Schema.define(:version => 20120228100043) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "points", :force => true do |t|
+    t.integer  "game_id"
+    t.float    "nthu"
+    t.float    "nctu"
+    t.string   "remark"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reports", :force => true do |t|
     t.integer  "game_id"
-    t.integer  "set"
+    t.string   "set"
     t.integer  "nthu"
     t.integer  "nctu"
     t.string   "remark"

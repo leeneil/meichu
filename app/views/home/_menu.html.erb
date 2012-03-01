@@ -1,3 +1,4 @@
+<% if current_page?(:action=>"index") %>
 <li>
 	<h2>2012壬辰梅竹所有賽事 </h2>
 	<ul>
@@ -6,5 +7,53 @@
 				<%=link_to status.name %>
 			</li>
 		<% end %>
+	</ul>
+</li>
+<% end %>
+<li>
+	<h2>為自己的學校加油！ </h2>
+	<ul>		
+		<li>
+			<%=link_to '梅竹龐達熊', 'http://www.facebook.com/meichuwin', :target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to '國立交通大學梅竹後援會', 'http://www.facebook.com/nctu.meichu?ref=ts', \
+			:target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to '梅竹龐達熊 Google+', 'https://plus.google.com/103356288820212098675/posts',\
+			 :target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to '國立交通大學梅竹後援會 Google+', 'https://plus.google.com/117050565485673718637/posts',\
+			 :target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to 'Google+ 為壬辰梅竹賽加油', 'http://www.gomeichu.com/', :target=>"_blank" %>
+		</li>
+	</ul>
+</li>
+<li>
+	<h2>賽事轉播 </h2>
+	<ul>		
+		<li>
+			<%=link_to '清大計通中心學習科技組', 'mms://broadcast.cc.nthu.edu.tw/live', :target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to '清華媒體小組', 'http://media.club.nthu.edu.tw/thbsweb/', \
+			:target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to '梅籌 Google+', 'https://plus.google.com/u/0/s/%E6%A2%85%E7%AB%B9%E7%B1%8C%E5%A7%94%E6%9C%83#103246446675644237560/posts', :target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to '交大直播網', 'http://broadcast.it.nctu.edu.tw/', \
+			:target=>"_blank" %>
+		</li>
+		<li>
+			<%=link_to 'Juiker 揪科網', 'http://watch.juiker.tw/NTHULive/', \
+			:target=>"_blank" %>
+		</li>
+
 	</ul>
 </li>

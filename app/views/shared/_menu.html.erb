@@ -1,0 +1,29 @@
+<ul>
+	<li><a href="http://www.facebook.com/Meichu.Panda.Press" class="first" target="_blank">
+		沒竹通訊社</a></li>
+	<% if current_page?(:action=>"index") %>	
+		<li class="current_page_item">
+	<% else %> <li> <% end %>		
+		<%=link_to '首頁', :controller=>"home", :action=>"index" %></li>
+		
+	<% if current_page?(:action=>"list") and params[:id]=="championship" %>	
+	<li class="current_page_item">
+	<% else %> <li> <% end %>		
+	<%=link_to '正式賽', :controller=>"home", :action=>"list", :id=>"championship" %></li>
+	
+	<% if current_page?(:action=>"list") and params[:id]=="exhibition" %>	
+	<li class="current_page_item">
+	<% else %> <li> <% end %>		
+	<%=link_to '表演賽', :controller=>"home", :action=>"list", :id=>"exhibition" %></li>
+	
+	<% if current_page?(:action=>"list") and params[:id]=="xd" %>	
+	<li class="current_page_item">
+	<% else %> <li> <% end %>		
+	<%=link_to '賽外賽', :controller=>"home", :action=>"list", :id=>"xd" %></li>
+	
+	<% if current_page?(:controller=>"live") %>	
+		<li class="current_page_item">
+	<% else %> <li> <% end %>		
+		<%=link_to '賽事實況', '#' %></li>		
+
+</ul>
