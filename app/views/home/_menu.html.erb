@@ -4,7 +4,7 @@
 	<ul>
 		<% for status in @statuses %>
 			<li>
-				<%=link_to status.name %>
+				<%=link_to status.name, :anchor=>status.id %>
 			</li>
 		<% end %>
 	</ul>
@@ -56,4 +56,10 @@
 		</li>
 
 	</ul>
+</li>
+<li>
+	<h2>帶著你的手機看梅竹！ </h2>
+	<center>
+	<%=image_tag 'qr_code.png' %>
+	</center>
 </li>

@@ -1,5 +1,6 @@
 <%= render :partial => "champion" %>
 <% for status in @statuses %>
+	<a name="<%=h status.id %>"></a>
 	<% for game in status.games %>
 		<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
 					<h2 class="title"><a href="#">
