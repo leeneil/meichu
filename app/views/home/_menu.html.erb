@@ -1,9 +1,9 @@
 <li>
 	<h2>2012壬辰梅竹所有賽事 </h2>
 	<ul>
-		<% for game in @statuses %>
+		<% for status in @statuses %>
 			<li>
-				<%=link_to game.status.name %>
+				<%=link_to status.name %>
 			</li>
 		<% end %>
 	</ul>
