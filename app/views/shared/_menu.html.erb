@@ -1,7 +1,7 @@
 <ul>
 	<li><a href="http://www.facebook.com/Meichu.Panda.Press" class="first" target="_blank">
 		沒竹通訊社</a></li>
-	<% if current_page?(:action=>"index") %>	
+	<% if current_page?(:action=>"index") and current_page?(:controller=>"home") %>	
 		<li class="current_page_item">
 	<% else %> <li> <% end %>		
 		<%=link_to '首頁', :controller=>"home", :action=>"index" %></li>

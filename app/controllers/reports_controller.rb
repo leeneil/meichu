@@ -17,5 +17,10 @@ class ReportsController < ApplicationController
     @game = Game.find(params[:id])
     @reports = @game.reports
   end
+  def destroy
+    @report = Report.find(params[:id])
+    @report.destroy
+    redirect_to(:action=>"index")
+  end
   
 end

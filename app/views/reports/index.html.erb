@@ -11,6 +11,7 @@
 							<strong><%= report.game.title %></strong>
 							第<%= report.set %> <%= report.game.set %>
 							[<%=link_to '編輯', :action=>"edit", :id=>report %>]
+							[<%=link_to '刪除', :action=>"destroy", :id=>report %>]
 							
 						</li>
 					<% end %>
