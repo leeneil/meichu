@@ -1,0 +1,45 @@
+	
+<li>
+	<h2>
+		壬辰梅竹總錦標
+	</h2>
+	<ul>		
+		<% for point in @points %>
+			<li>
+				<strong><%= point.game.title%></strong>
+				[<%=link_to '編輯', :action=>"edit", :id=>point %>]
+				[<%=link_to '刪除', :action=>"destroy", :id=>point %>]
+			</li>
+		
+		<% end %>
+	</ul>
+</li>
+<li>
+	<h2>
+		積分
+	</h2>
+	<ul>		
+			<li>
+				<strong>清華大學</strong> <%=h @nthu %>
+			</li>
+			<li>
+				<strong>交通大學</strong> <%=h @nctu %>
+			</li>
+	</ul>
+</li>
+<li>
+	<h2>
+		管理界面
+	</h2>
+	<ul>		
+			<li>
+				<%=link_to '賽事資訊', :controller=>"admin"%>
+			</li>
+			<li>
+				<%=link_to '總錦標積分', :controller=>"championship"%>
+			</li>
+			<li>
+				<%=link_to '賽況更新', :controller=>"reports"%>
+			</li>
+	</ul>
+</li>

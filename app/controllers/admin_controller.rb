@@ -16,10 +16,6 @@ class AdminController < ApplicationController
     end
   end
   
-end
-private
-def authenticate
-  authenticate_or_request_with_http_basic do |name, password|
-    name == "nochu" && password == "nthuthewinner"
-  end
+
+  
 end

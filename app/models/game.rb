@@ -10,4 +10,7 @@ class Game < ActiveRecord::Base
   def self.live
     find(:all, :conditions=>"status_id<=3")
   end
+  def self.champ
+    find(:all, :conditions=>"game_type_id=1 and status_id=3")
+  end
 end

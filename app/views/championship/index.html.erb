@@ -1,24 +1,19 @@
 <div class="post"><div class="post-bgtop"><div class="post-bgbtm">
 			<h2 class="title"><a href="#">
-				新增賽況
+				總錦標積分管理
 			</a></h2>
 
 			<div class="entry">
 				
-				<%=form_for :report do |f| %>
+				<%=form_for :point do |f| %>
 				<ul>
 					<li>
 						<strong>
 							賽事名稱
 						</strong>
-						<%= f.collection_select(:game_id, Game.live, :id, :title) %>
+						<%= f.collection_select(:game_id, Game.champ, :id, :title) %>
 					</li>
-					<li>
-						<strong>
-							局、盤、點
-						</strong>
-						<%= f.text_field :set %>
-					</li>
+
 					<li>
 						<strong>
 							清大得分
@@ -35,12 +30,12 @@
 						<strong>
 							備註
 						</strong>
-						<%= f.text_area :remark %>
+						<%= f.text_area :remark, :size=>"30x5" %>
 					</li>
 
 
 				</ul>
-				<%= f.submit '新增賽況'%>
+				<%= f.submit '新增'%>
 				<% end %>
 
 			</div>
