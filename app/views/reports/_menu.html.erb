@@ -21,9 +21,9 @@
 		壬辰梅竹即時賽況
 	</h2>
 	<ul>
-			<% for report in @all_reports %>
+			<% for game in @live_games %>
 				<li>
-					<%=link_to report.game.title, :id=>report.game.id %>
+					<%=link_to game.title, :id=>game.id %>
 				</li>
 			<% end %>
 	</ul>

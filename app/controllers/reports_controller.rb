@@ -10,7 +10,8 @@ class ReportsController < ApplicationController
     end
   end
   def live
-    @all_reports = Report.all(:group=>"game_id", :order=>"updated_at DESC")
+    #@all_reports = Report.all(:group=>"game_id", :order=>"updated_at DESC")
+    @live_games = Game.all(:order=>"date, position")
     @game = Game.find(params[:id])
     @reports = @game.reports
   end
