@@ -17,6 +17,13 @@ class ReportsController < ApplicationController
     @game = Game.find(params[:id])
     @reports = @game.reports
   end
+  def edit
+    @live_games = Game.all(:order=>"date, position")
+    @report = Report.find(params[:id])
+    if request.post? and @report.update_attributes(params[:report])
+      redirect_to(:action=>"index")
+    end
+  end
   def destroy
     @report = Report.find(params[:id])
     @report.destroy
