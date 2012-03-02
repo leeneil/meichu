@@ -40,6 +40,9 @@ class ChampionshipController < ApplicationController
   
   def destroy
     @point = Point.find(params[:id])
+    @game = @point.game
+    @game.status_id = 3
+    @game.update_attributes(params[:game])
     @point.destroy
     redirect_to(:action=>"index")
   end

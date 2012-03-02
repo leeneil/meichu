@@ -1,0 +1,26 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				<%=h @game.title %>
+			</a></h2>
+
+			<div class="entry">
+				
+				<ul>
+					<% if @reports.empty? %>
+						<p>比賽尚未開始或尚未有賽況更新</p>
+					<% end %>
+					<% for report in @reports %>
+					<p><strong>第<%=report.set%><%=@game.set%></strong> <br />
+								<% if  @game.home_id == 113 %>
+									交大 <%=h report.nctu%>：清大 <%=h report.nthu%> <br />
+								<% else %>
+									清大 <%=h report.nthu%>：交大 <%=h report.nctu%> <br />
+								<% end %>
+								<%=h report.remark %></p>
+								<p><em><%=time_ago_in_words(report.updated_at)%> ago</em></p>
+					<% end %>
+					
+				</ul>
+
+			</div>	
+</div></div></div>

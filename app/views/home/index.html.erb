@@ -4,7 +4,8 @@
 	<% for game in status.games %>
 		<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
 					<h2 class="title"><a href="#">
-						<%= game.title%>
+						<%= link_to game.title, :controller=>"reports", :action=>"live",\
+						:id=>game.id %>
 					</a></h2>
 					<p>
 						<strong><%=game.status.name %></strong>

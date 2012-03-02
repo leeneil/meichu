@@ -1,3 +1,4 @@
+<% unless current_page?(:action=>"live") %>
 <li>
 	<h2>
 		管理界面
@@ -12,5 +13,18 @@
 			<li>
 				<%=link_to '賽況更新', :controller=>"reports"%>
 			</li>
+	</ul>
+</li>
+<% end %>
+<li>
+	<h2>
+		壬辰梅竹即時賽況
+	</h2>
+	<ul>
+			<% for report in @all_reports %>
+				<li>
+					<%=link_to report.game.title, :id=>report.game.id %>
+				</li>
+			<% end %>
 	</ul>
 </li>

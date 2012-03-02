@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   belongs_to :home
   belongs_to :status
   has_one :point
-  has_many  :reports
+  has_many  :reports, :order=>"updated_at DESC"
   def self.coming
     find(:all, :conditions=>"status_id=3")
   end
