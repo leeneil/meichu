@@ -8,9 +8,9 @@ class Game < ActiveRecord::Base
     find(:all, :conditions=>"status_id=3")
   end
   def self.live
-    find(:all, :conditions=>"status_id<=3")
+    find(:all, :conditions=>"status_id<=3",:order=>"date, position")
   end
   def self.champ
-    find(:all, :conditions=>"game_type_id=1 and status_id<4")
+    find(:all, :conditions=>"game_type_id=1 and status_id<=3")
   end
 end

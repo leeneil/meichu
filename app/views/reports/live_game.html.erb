@@ -1,0 +1,25 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				實況轉播模式：請選擇轉播項目
+			</a></h2>
+
+			<div class="entry">
+
+				<ul>
+					<% for game in @live_games %>
+					<li>
+						
+						<strong>
+							<%=h game.title%>
+						</strong> <%=link_to '開始轉播', :action=>"live_new", :id=>game.id %>
+					</li>
+					<% end %>
+					
+
+				</ul>
+
+			</div>
+			<p>
+				<%= link_to '所有賽況', :action=>:index %>
+			</p>	
+</div></div></div>

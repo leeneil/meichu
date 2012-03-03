@@ -1,0 +1,49 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				新增賽況
+			</a></h2>
+
+			<div class="entry">
+				
+				
+						<strong>
+							<%=h @current.title %>
+						</strong> <em><%=link_to '切換', :action=>"live_game"%></em>
+						
+						
+
+
+						<table>
+							<tr>
+								<th>局、盤、點</th>
+								<th>清大得分</th>
+								<th>交大得分</th>
+								<th>備註</th>
+								<th>123</th>
+							</tr>
+							<tr>
+								<%=form_for :report do |f| %>
+								<td><%= f.text_field :set,:size=>"10" %></td>
+								<td><%= f.text_field :nthu,:size=>"10" %></td>
+								<td><%= f.text_field :nctu,:size=>"10" %></td>
+								<td><%= f.text_field :remark,:size=>"10" %></td>
+								<td><% f.hidden_field :game_id, :value=>@current.id %>
+								<%= f.submit '送出' %></td>
+								<% end %>
+							</tr>
+							<% for report in @current_reports %>
+								<tr>
+									<td><%=h report.set %></td>
+									<td><%=h report.nthu %></td>
+									<td><%=h report.nctu %></td>
+									<td><%=h report.remark %></td>
+								</tr>	
+							<% end %>
+						</table>	
+				
+
+			</div>
+			<p>
+				<%= link_to '所有賽況', :action=>:index %>
+			</p>	
+</div></div></div>
