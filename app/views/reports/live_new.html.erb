@@ -23,10 +23,12 @@
 							</tr>
 							<tr>
 								<%=form_for :report do |f| %>
-								<td><%= f.text_field :set,:size=>"10" %></td>
-								<td><%= f.text_field :nthu,:size=>"10" %></td>
-								<td><%= f.text_field :nctu,:size=>"10" %></td>
-								<td><%= f.text_field :remark,:size=>"10" %></td>
+								<td><%= f.text_field :set,:size=>"10", :value=>@previous.set %></td>
+								<td><%= f.text_field :nthu,:size=>"10", \
+								:value=>@previous.nthu %></td>
+								<td><%= f.text_field :nctu,:size=>"10", \
+								:value=>@previous.nctu %></td>
+								<td><%= f.text_field :remark,:size=>"30" %></td>
 								<td><% f.hidden_field :game_id, :value=>@current.id %>
 								<%= f.submit '送出' %></td>
 								<% end %>
