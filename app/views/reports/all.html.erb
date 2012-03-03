@@ -1,0 +1,25 @@
+<div class="post"><div class="post-bgtop"><div class="post-bgbtm">
+			<h2 class="title"><a href="#">
+				最新賽況
+			</a></h2>
+
+			<div class="entry">
+				
+				<ul>
+					<% for report in @reports %>
+						<li>
+							<strong><%= report.game.title %></strong>
+							<p><strong>第<%=report.set%><%=report.game.set%></strong> <br />
+										<% if  report.game.home_id == 113 %>
+											交大 <%=h report.nctu%>：清大 <%=h report.nthu%> <br />
+										<% else %>
+											清大 <%=h report.nthu%>：交大 <%=h report.nctu%> <br />
+										<% end %>
+										<%=h report.remark %></p>
+						</li>
+					<% end %>
+				</ul>
+
+			</div>
+	
+</div></div></div>

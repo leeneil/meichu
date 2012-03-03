@@ -21,9 +21,9 @@
 	<% else %> <li> <% end %>		
 	<%=link_to '賽外賽', :controller=>"home", :action=>"list", :id=>"xd" %></li>
 	
-	<% if current_page?(:action=>"live") %>	
+	<% if current_page?(:action=>"all") %>	
 		<li class="current_page_item">
 	<% else %> <li> <% end %>		
-		<%=link_to '賽事實況', '#' %></li>		
+		<%=link_to '賽事實況', :controller=>"reports", :action=>"all" %></li>		
 
 </ul>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class ReportsController < ApplicationController
-  before_filter :authenticate, :except => :live
+  before_filter :authenticate, :except => [:live, :all]
   def index
     @reports = Report.all(:order=>"id DESC")
     @live_games = Game.all(:order=>"date, position")
@@ -36,6 +36,10 @@ class ReportsController < ApplicationController
     @game = Game.find(params[:id])
     @page_title = @game.title + '文字賽況'
     @reports = @game.reports
+  end
+  def all
+    @reports = Report.all(:order=>"id DESC")
+    @live_games = Game.all(:order=>"date, position")
   end
   def edit
     @live_games = Game.all(:order=>"date, position")
