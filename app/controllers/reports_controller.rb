@@ -12,9 +12,11 @@ class ReportsController < ApplicationController
     end
   end
   def live
+    
     #@all_reports = Report.all(:group=>"game_id", :order=>"updated_at DESC")
     @live_games = Game.all(:order=>"date, position")
     @game = Game.find(params[:id])
+    @page_title = @game.title + '文字賽況'
     @reports = @game.reports
   end
   def edit
@@ -24,6 +26,7 @@ class ReportsController < ApplicationController
       redirect_to(:action=>"index")
     end
   end
+  
   def destroy
     @report = Report.find(params[:id])
     @report.destroy

@@ -23,7 +23,8 @@
 										清大 <%=h @report.nthu%>：交大 <%=h @report.nctu%> <br />
 									<% end %>
 									<%=h @report.remark %></p>
-									
+							<em><%= link_to '更多', :controller=>"reports", :action=>"live",\
+									:id=>game.id %></em>
 						<% end %>
 						<% if game.winner != 0 and game.status_id == 4%>
 							<p></p>
