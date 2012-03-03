@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ReportsController < ApplicationController
   before_filter :authenticate, :except => :live
   def index
